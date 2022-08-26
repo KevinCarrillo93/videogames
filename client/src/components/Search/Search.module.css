@@ -1,0 +1,35 @@
+.searchBox{
+    top: 50%;
+    left: 50%;
+    background: #161616;
+    height: 40px;  
+    border-radius: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+}
+.searchBtn{
+    all:unset;
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 80%;
+    cursor: pointer;
+}
+.searchTxt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding-left: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: 'Poppins';
+} 

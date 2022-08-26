@@ -1,0 +1,88 @@
+.addVideogameButton{
+    color: white;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 4px;
+    background: #0074e4;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: Light;
+}
+.buttonsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    padding-top: 20px;
+}
+.goBackButton{
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    opacity: 0.7;
+    font-family: 'Poppins';
+    cursor: pointer;
+}
+.container{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Poppins';
+    width: 1400px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 600px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.label{
+    padding-top: 10px;
+}
+.checkers{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    border: solid;
+    border-radius: 10px;
+    padding: 10px;
+    white-space: nowrap;
+}
+.inputText{
+    border-radius: 5px;
+    height: 30px;
+    font-family: 'Poppins';
+}
+.inputTextArea{
+    border-radius: 5px;
+    height: 70px;
+    font-family: 'Poppins';
+}
+.imgContainer{
+    padding-top: 10px;
+    width: 500px;
+    height: 850px;
+}
+.imgForm{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.pError{
+    margin: 0;
+    color: tomato;
+}

@@ -1,0 +1,50 @@
+
+.enterButton{
+    color: white;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 4px;
+    background: #0074e4;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(35px);
+    font-family: 'Poppins';
+    font-style: Light;
+}
+
+.goBackButton{
+    all: unset;
+    color: white;
+    opacity: 0.7;
+    font-family: 'Poppins';
+
+}
+
+.homeParent{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    transform: translateY(50%);
+    gap: 20px;
+    padding-right: 100px;
+    padding-left: 100px;
+}
+.h1letter{
+    color: white;
+    margin: 0;
+    font-family: 'Poppins';
+    font-style: bold;
+    font-weight: 700;
+    font-size: 400%;
+}
+
+.homeImg{
+    background-image: url('https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg');
+    background-size: cover;
+    width: 700px;
+    height: 400px;
+    border-radius: 40px;
+}

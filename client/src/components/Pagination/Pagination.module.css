@@ -1,0 +1,23 @@
+.buttonPage{
+    all: unset;
+    font-family: 'Poppins';
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.buttonPage:hover{
+    opacity: 1;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.pageItem{
+    list-style-type: none;
+    text-decoration: none;
+}

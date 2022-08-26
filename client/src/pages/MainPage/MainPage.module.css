@@ -1,0 +1,39 @@
+.addButton{
+    color: white;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 4px;
+    background: #0074e4;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+.mainGrid{
+    display: grid;
+    /* gap: 1.5rem; */
+    grid-template-columns: repeat(6, 1fr);
+    max-width: 1900px;
+}
+
+.mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    padding-left: 100px;
+    gap: 20px;
+    margin-right: 100px;
+}
+
+.videogamesGrid{
+    grid-column: span 5;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 100px;
+    padding: 0 0 0 100px;
+    justify-content: center;
+    margin-right: 50px;
+}
