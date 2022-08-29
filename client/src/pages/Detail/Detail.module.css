@@ -60,9 +60,43 @@
     font-size: 300%;
 }
 .description{
-    max-width: 1300px;
+    margin: 0;
+    height: 300px;
+    overflow: auto;
+    text-overflow: ellipsis;
 }
 .item{
     display: flex;
     justify-content: space-between;
+}
+
+.goBackButton{
+    all: unset;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    font-family: 'Poppins';
+    cursor: pointer;
+}
+
+.addVideogameButton{
+    color: white;
+    padding-left: 33px;
+    padding-right: 33px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 4px;
+    background: #0074e4;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Poppins';
+    font-style: Light;
+}
+
+.buttonsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

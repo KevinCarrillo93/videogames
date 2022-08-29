@@ -6,7 +6,11 @@ export const actionType = {
     GET_VIDEOGAMES_BY_ID: 'GET_VIDEOGAMES_BY_ID',
     GET_GENRES: 'GET_GENRES',
     POST_VIDEOGAME: 'POST_VIDEOGAME',
-    GET_VGIMAGES: 'GET_VGIMAGES'
+    GET_VGIMAGES: 'GET_VGIMAGES',
+    ALPHABETICAL_ORDER: 'ALPHABETICAL_ORDER',
+    RANK_ORDER: 'RANK_ORDER',
+    CREATION_FILTER: 'CREATION_FILTER',
+    GENRES_FILTER: 'GENRES_FILTER'
 }
 const url = 'http://localhost:3001';
 
@@ -17,9 +21,6 @@ export const getVideogames = () => {
         .then((data) => dispatch({
             type: actionType.GET_VIDEOGAMES, payload: data
         }))
-        .catch((e) => {
-            console.log(e);
-        });
     }
 }
 
@@ -30,9 +31,6 @@ export const getVideogamesByName = (name) =>{
         .then((data) => dispatch({
             type: actionType.GET_VIDEOGAMES_BY_NAME, payload: data
         }))
-        .catch((e) => {
-            console.log(e);
-        });
     };
 }
 
@@ -43,9 +41,6 @@ export const getVideogamesById = (id) =>{
         .then((data) => dispatch({
             type: actionType.GET_VIDEOGAMES_BY_ID, payload: data
         }))
-        .catch((e) => {
-            console.log(e);
-        });
     };
 }
 
@@ -71,8 +66,26 @@ export const createVideogame = (videogame) => {
     }
 }
 
-export const getVgImages = (imgArray) =>{
-    return function (dispatch){
-        return dispatch({type: actionType.GET_VGIMAGES, payload:imgArray})
+export const alphabetSort= (type)=>{
+    return{
+        type: actionType.ALPHABETICAL_ORDER, payload:type
+    };
+}
+
+export const rankSort= (type)=>{
+    return{
+        type: actionType.RANK_ORDER, payload:type
+    }
+}
+
+export const creationFilter = (type)=>{
+    return{
+        type: actionType.CREATION_FILTER, payload:type
+    }
+}
+
+export const genresFilter = (type)=>{
+    return{
+        type: actionType.GENRES_FILTER, payload:type
     }
 }

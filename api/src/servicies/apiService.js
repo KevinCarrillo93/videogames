@@ -6,7 +6,7 @@ const url = 'https://api.rawg.io/api/';
 async function getVideogames(size) {
   try {
     let apiPromiseOne = await axios.get(
-      `${url}games?key=${API_KEY}&page_size=${size}&page=17`
+      `${url}games?key=${API_KEY}&page_size=${size}&page=1`
     );
     let apiPromiseTwo = await axios.get(apiPromiseOne.data.next)
     let apiPromiseThree = axios.get(apiPromiseTwo.data.next)

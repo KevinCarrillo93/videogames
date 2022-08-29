@@ -1,0 +1,102 @@
+/* From uiverse.io by @fateself */
+.s1{
+    --i:1;
+}
+.s2{
+    --i:2;
+}
+.s3{
+    --i:3;
+}
+.s4{
+    --i:4;
+}
+.s5{
+    --i:5;
+}
+.s6{
+    --i:6;
+}
+.s7{
+    --i:7;
+}
+.s8{
+    --i:8;
+}
+.s9{
+    --i:9;
+}
+.s10{
+    --i:10;
+}
+.s11{
+    --i:11;
+}
+.s12{
+    --i:12;
+}
+.s13{
+    --i:13;
+}
+.s14{
+    --i:14;
+}
+.s15{
+    --i:15;
+}
+.s16{
+    --i:16;
+}
+.s17{
+    --i:17;
+}
+.s18{
+    --i:18;
+}
+.s19{
+    --i:19;
+}
+.s20{
+    --i:20;
+}
+.loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    transform: translate(700%,200%);
+  }
+  
+  .loader span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(18deg * var(--i)));
+  }
+  
+  .loader span::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #00aeff;
+    box-shadow: 0 0 10px #00aeff, 0 0 20px #00aeff, 0 0 40px #00aeff,
+      0 0 60px #00aeff, 0 0 80px #00aeff, 0 0 100px #00aeff;
+    animation: animate34 2s linear infinite;
+    animation-delay: calc(0.1s * var(--i));
+  }
+  
+  @keyframes animate34 {
+    0% {
+      transform: scale(1);
+    }
+  
+    80%,
+    100% {
+      transform: scale(0);
+    }
+  }

@@ -43,11 +43,9 @@ export default function CreateGame() {
   useEffect(() => {
     dispatch(getGenres());
     if(Object.keys(inputErrors).length === 0 && isSubmit){
-      console.log(inputs)
       dispatch(createVideogame(inputs))
       .then((data) => {
         console.log(data)
-        // return dispatch({type: actionType.POST_VIDEOGAME, payload: data})
         history.push('/main')
       })
       .catch((e) => {
@@ -60,7 +58,6 @@ export default function CreateGame() {
     e.preventDefault();
     setInputErrors(validate(inputs))
     setIsSubmit(true)
-    console.log('handleSubmit')
   };
 
   const handleChecked = (e) => {
@@ -106,11 +103,12 @@ export default function CreateGame() {
   const validate = (values) =>{
     const errors = {}
     const regex = /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/;
-    // if(!values.name){
-    //   errors.name = 'Name is required!'
-    // }else if(values.name.length > 100){
-    //   errors.name = 'Name can not be longer than 100 characters'
-    // }
+    if(!values.name){
+      console.log('name hellooo')
+      errors.name = 'Name is required!'
+    }else if(values.name.length > 100){
+      errors.name = 'Name can not be longer than 100 characters'
+    }
     if(!regex.test(values.released)){
         errors.released = 'This is not a valid Date!'
     }
@@ -118,6 +116,9 @@ export default function CreateGame() {
         errors.description_raw = 'Description is required!'
     }else if(values.description_raw.length>500){
       errors.description_raw = 'Description can not exceed 500 characters'
+    }
+    if(values.platforms.length === 0){
+      errors.platforms = 'Please select a platform'
     }
     return errors;
   }
@@ -140,6 +141,7 @@ export default function CreateGame() {
           onChange={handleInputs}
           placeholder="Write the name of your videogame..."
           maxLength='110'
+          required
         />
         <p className={styles.pError}>{inputErrors.name}</p>
         <label className={styles.label}>Released:</label>
@@ -150,6 +152,7 @@ export default function CreateGame() {
           min='1899-01-01'
           max='2026-01-01'
           onChange={handleInputs}
+          required
         />
         <label className={styles.label}>Rating:{` ${range}`}</label>
         <input
@@ -163,7 +166,7 @@ export default function CreateGame() {
         />
         <label className={styles.label}>Image:</label>
         <input
-          type="text"
+          type="url"
           className={styles.inputText}
           name="background_image"
           onChange={handleInputs}
@@ -177,6 +180,7 @@ export default function CreateGame() {
           onChange={handleInputs}
           placeholder="Write your game description..."
           maxLength='510'
+          required
         />
          <p className={styles.pError}>{inputErrors.description_raw}</p>
         <label className={styles.label}>Genres:</label>
@@ -202,6 +206,7 @@ export default function CreateGame() {
             </div>
           ))}
         </div>
+        <p className={styles.pError}>{inputErrors.platforms}</p>
         <div className={styles.buttonsContainer}>
           <button onClick={()=>history.goBack()} className={styles.goBackButton}>
             <i className="material-icons">arrow_back</i>

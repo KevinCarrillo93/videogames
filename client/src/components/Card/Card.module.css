@@ -6,6 +6,10 @@
 .cardGenre{
     color: white;
     opacity: 80%;
+    height: 50px;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .cardName{

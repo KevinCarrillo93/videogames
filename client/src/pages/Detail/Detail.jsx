@@ -2,18 +2,24 @@ import styles from './Detail.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getVideogamesById } from '../../redux/actions';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 
 export default function Detail(){
-    const detail = useSelector((state) =>state.videoGameDetail); 
-    const [loader, setLoader] = useState(false);
+    let detail = useSelector((state) =>state.videoGameDetail); 
+    const [loading, setLoading] = useState(true);
     const [mainImage, setmainImage] = useState();
     const { id } = useParams();
+    const history = useHistory();
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getVideogamesById(id));
+      setLoading(true)
+        dispatch(getVideogamesById(id))
+        .then((data)=>
+          setLoading(false)
+        )
     }, [dispatch, id]);
 
     useEffect(()=>{
@@ -23,10 +29,9 @@ export default function Detail(){
     function onImageChange(img){
       setmainImage(img);
     }
-    console.log(detail.platforms)
-
-    if(loader){
-      return <div>Loading..........</div>
+    if(loading){
+      console.log('sisas')
+      return <Loader/>
     }
 
     return (
@@ -49,7 +54,7 @@ export default function Detail(){
                   onClick={() => onImageChange(detail.short_screenshots[0])}
                   src={detail.short_screenshots[0].image}
                   alt="img1"
-                  className={`${styles.thumbnail} ${styles.active}`}
+                  className={styles.thumbnail}
                 />
                 <img
                   onClick={() => onImageChange(detail.short_screenshots[1])}
@@ -73,27 +78,42 @@ export default function Detail(){
             </div>
             <div className={`${styles.col} ${styles.vgDetail}`}>
               <p className={styles.item}>
-                <strong>Genders:</strong>{" "}
-                { detail.genres && detail.genres.map((g) => g.name).join(", ")}
+                <strong>Genres:</strong>{" "}
+                {detail.genres && detail.genres.map((g) => g.name).join(", ")}👾
               </p>
               <hr />
               <p className={styles.item}>
-                <strong>Released:</strong> {detail.released}
+                <strong>Released:</strong> {detail.released}📅
               </p>
               <hr />
               <p className={styles.item}>
-                <strong>Rating:</strong> {detail.rating}
+                <strong>Rating:</strong> {detail.rating}⭐
               </p>
               <hr />
               <p>
-                <strong>Platforms:</strong>{' '}
-                { detail.platforms && detail.platforms.map((p) => p.platform === undefined ? p: p.platform.name ).join(", ")}
+                <strong>Platforms:</strong>{" "}
+                {detail.platforms &&
+                  detail.platforms
+                    .map((p) =>
+                      p.platform === undefined ? p : `${p.platform.name} 🎮`
+                    )
+                    .join(", ")}
               </p>
-              <hr />
+              <hr />              
+              <div><p className={styles.description}>{detail.description_raw}</p></div>
+              <div className={styles.buttonsContainer}>
+                <button
+                  onClick={() => {history.goBack()}}
+                  className={styles.goBackButton}
+                >
+                  <i className="material-icons">arrow_back</i>
+                  <p>Go back</p>
+                </button>
+                <button className={styles.addVideogameButton} onClick={()=>history.push('/create')}>
+                  Create your own game
+                </button>
+              </div>        
             </div>
-            <p className={styles.description}>
-              <strong>Description:</strong> {detail.description_raw}
-            </p>
           </>
         )}
       </div>

@@ -16,8 +16,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 600px;
     padding-top: 20px;
+    transform: translateY(40px);
 }
 .goBackButton{
     all: unset;
@@ -49,9 +49,9 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-.label{
+/* .label{
     padding-top: 10px;
-}
+} */
 .checkers{
     display: grid;
     grid-template-columns: repeat(5,1fr);

@@ -14,7 +14,7 @@ export default function Card({id, name, genres, background_image}){
               genres &&
               genres.map(g=>g.name).join(', ')
               }</div>
-            <div className={styles.cardName}>{name.trim()}</div>
+            <div className={styles.cardName}>{name}</div>
           </div>
         </Link>
       </li>

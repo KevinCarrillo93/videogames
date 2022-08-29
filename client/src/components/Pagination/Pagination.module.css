@@ -4,7 +4,7 @@
     font-size: 1em;
     color: white;
     cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.5;
 }
 
 .buttonPage:hover{
@@ -20,4 +20,13 @@
 .pageItem{
     list-style-type: none;
     text-decoration: none;
+}
+
+.currentbuttonPage{
+    all: unset;
+    font-family: 'Poppins';
+    font-size: 1.1em;
+    color: white;
+    cursor: pointer;
+    opacity: 1;
 }
