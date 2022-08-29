@@ -109,7 +109,6 @@ export default function MainPage() {
         <ul className={styles.videogamesGrid}>
           {currentVgs.length === 0 ? (
             <NoResults search={search}/>
-            // <div style={{color:'white'}}>There is not results....</div>
           ) : (
             currentVgs.map((vg) => (
               <Card

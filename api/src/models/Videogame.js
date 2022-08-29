@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
       short_screenshots: {
         type: DataTypes.ARRAY(DataTypes.JSON),
         defaultValue: [
-          { image: "https://cdn.wallpapersafari.com/32/33/HJ2ZY5.png" },
+          { image: "https://www.teahub.io/photos/full/27-270327_best-video-game.jpg" },
           { image: "https://static.alphacoders.com/thumbs_categories/32.jpg" },
           { image: "https://cdn.wallpapersafari.com/72/27/Kn5Dz2.jpg" },
           { image: "https://assets.deadbydaylight.com/DBD_Website_Keyart_d3b7a9628d.jpg" },
