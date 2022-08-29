@@ -3,7 +3,6 @@ import React from "react";
 
 export default function Filters({genres, handleAlphOrder, handleRankOrder, handleCreationFilter, handleGenresOrder}){
     const handleChangeAlp = (e) =>{
-        console.log(e.target)
         handleAlphOrder(e.target.value)
     }
     const handleChangeRank = (e) =>{

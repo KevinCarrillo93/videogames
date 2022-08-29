@@ -15,52 +15,38 @@ export const actionType = {
 const url = 'http://localhost:3001';
 
 export const getVideogames = () => {
-    return function (dispatch){
-        return fetch(`${url}/videogames`)
-        .then(res => res.json())
-        .then((data) => dispatch({
-            type: actionType.GET_VIDEOGAMES, payload: data
-        }))
+    //cambiar fetch por axios, y en la ruta se quita la 
+    return async function (dispatch){
+        const data = await axios('/videogames')
+        return dispatch({type: actionType.GET_VIDEOGAMES, payload: data.data})
     }
 }
 
 export const getVideogamesByName = (name) =>{
-    return function (dispatch){
-        return fetch(`${url}/videogames?name=${name}`)
-        .then(res => res.json())
-        .then((data) => dispatch({
-            type: actionType.GET_VIDEOGAMES_BY_NAME, payload: data
-        }))
+    return async function (dispatch){
+        const data = await axios(`/videogames?name=${name}`) 
+        return dispatch({type: actionType.GET_VIDEOGAMES_BY_NAME, payload: data.data})
     };
 }
 
 export const getVideogamesById = (id) =>{
-    return function (dispatch){
-        return fetch(`${url}/videogames/${id}`)
-        .then(res => res.json())
-        .then((data) => dispatch({
-            type: actionType.GET_VIDEOGAMES_BY_ID, payload: data
-        }))
+    return async function (dispatch){
+        const data = await axios(`/videogames/${id}`)
+        return dispatch({ type: actionType.GET_VIDEOGAMES_BY_ID, payload: data.data})
     };
 }
 
 export const getGenres = ()=>{
-    return function (dispatch){
-        return fetch(`${url}/genres`)
-        .then(res => res.json())
-        .then((data) => dispatch({
-            type: actionType.GET_GENRES, payload: data
-        }))
-        .catch((e) => {
-            console.log(e);
-        });
+    return async function (dispatch){
+        const data = await axios(`/genres`)
+        return dispatch({type: actionType.GET_GENRES, payload: data.data})
     };
 }
 
 export const createVideogame = (videogame) => {
     return function (dispatch)    {
         return axios
-        .post(`${url}/videogames`, videogame).then((data) => {
+        .post(`/videogames`, videogame).then((data) => {
             return dispatch({type: actionType.POST_VIDEOGAME, payload: data})
         })
     }
