@@ -37,3 +37,26 @@
     justify-content: center;
     margin-right: 50px;
 }
+
+@media (max-width:1300px) {
+        .mainHeader{
+            justify-content: space-evenly;
+        }
+}
+@media (max-width:550px) {
+    .mainHeader{
+        flex-direction: column;
+    }
+    .mainGrid{
+        all: unset;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .videogamesGrid{
+        all: unset;
+        display: flex;
+        flex-direction: column;
+    }
+
+}

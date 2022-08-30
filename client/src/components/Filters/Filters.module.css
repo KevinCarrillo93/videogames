@@ -26,3 +26,10 @@
     font-family: 'Poppins';
     border: none;
 }
+@media (max-width:550px) {
+    .filtersMenu{
+        margin-right: 0;
+        row-gap: 0;
+        grid-row-gap: 0;
+    }
+}

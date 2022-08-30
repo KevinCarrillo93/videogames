@@ -30,7 +30,6 @@ export default function Detail(){
       setmainImage(img);
     }
     if(loading){
-      console.log('sisas')
       return <Loader/>
     }
 

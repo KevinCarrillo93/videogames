@@ -16,6 +16,8 @@
     padding-top: 5px;
     text-align: start;
     color: white;
+    word-break: break-all;
+
 }
 
 .cardLink{
@@ -42,6 +44,11 @@
     align-items: flex-start;    
     padding-top: 10px;
     font-family: 'Poppins';
+}
+@media (max-width:550px) {
+    .cardName{
+        width: 200px;
+    }
 }
 
 

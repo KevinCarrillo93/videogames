@@ -58,12 +58,18 @@
     max-width: 700px;
     font-family: 'Poppins';
     font-size: 300%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+.title:hover{
+    overflow: initial;
+}    
 .description{
     margin: 0;
     height: 300px;
     overflow: auto;
     text-overflow: ellipsis;
+    word-break: break-all;
 }
 .item{
     display: flex;
