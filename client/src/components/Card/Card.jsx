@@ -12,7 +12,7 @@ export default function Card({id, name, genres, background_image}){
             <div className={styles.cardGenre}>{' '}
               {
               genres &&
-              genres.map(g=>g.name).join(', ')
+              genres?.map(g=>g.name).join(', ')
               }</div>
             <div className={styles.cardName}>{name}</div>
           </div>
