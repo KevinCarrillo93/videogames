@@ -43,7 +43,7 @@ export default function MainPage() {
     )
     dispatch(getGenres());
   }, [dispatch]);
-  
+  console.log('soy el order',order)
   if(loading){
     return <Loader />    
   }  
