@@ -56,6 +56,7 @@
 
 .title{
     max-width: 700px;
+    min-width: 400px;
     font-family: 'Poppins';
     font-size: 300%;
     overflow: hidden;
@@ -105,4 +106,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+@media (max-width:550px) {
+    .title{
+        max-width: 400px;
+        min-width: 200px;
+        padding: 0 20px;
+    }
+    .container .thumbnailContainer{
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+    }
+    .imgContainer{
+        height: 0;
+    }
+    /* .detailsContainer{
+        display: none;
+    } */
 }

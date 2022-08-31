@@ -16,3 +16,8 @@
     color: white;
     width: max-content;
 }
+@media (max-width:1400px) {
+    .notFoundContainer{
+        width: min-content;
+    }
+}

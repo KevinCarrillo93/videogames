@@ -100,3 +100,9 @@
       transform: scale(0);
     }
   }
+
+  @media (max-width:550px) {
+    .loader{
+        transform: translate(130px,160px);
+    }
+  }

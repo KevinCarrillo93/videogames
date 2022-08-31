@@ -52,7 +52,7 @@ export default function CreateGame() {
           console.log(e);
       })
     }
-  }, [dispatch, inputErrors]);
+  }, [dispatch, inputErrors,history,inputs,isSubmit]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

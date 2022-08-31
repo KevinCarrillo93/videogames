@@ -30,3 +30,10 @@
     cursor: pointer;
     opacity: 1;
 }
+
+@media (max-width:550px){
+    .pagination{
+        padding: 0;
+        column-gap: 20px;
+    }
+}

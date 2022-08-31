@@ -12,7 +12,6 @@ export const actionType = {
     CREATION_FILTER: 'CREATION_FILTER',
     GENRES_FILTER: 'GENRES_FILTER'
 }
-const url = 'http://localhost:3001';
 
 export const getVideogames = () => {
     //cambiar fetch por axios, y en la ruta se quita la 
